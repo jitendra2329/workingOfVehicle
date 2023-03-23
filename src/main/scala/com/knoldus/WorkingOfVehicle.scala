@@ -15,12 +15,12 @@ class  Vehicle{
   }
 
 
-  def fillFuel(fuelAmount: Int): Int = {
+  def fillFuel(fuelToFill: Int): Int = {
 
-    if ((currentFuel + fuelAmount) <= fuelCapacity) {
-        currentFuel = currentFuel + fuelAmount
+    if ((currentFuel + fuelToFill) <= fuelCapacity && fuelToFill > 0 ) {
+        currentFuel = currentFuel + fuelToFill
         currentFuel
     }
-    else throw new IllegalArgumentException(fuelAmount.toString)
+    else throw new IllegalArgumentException(fuelToFill.toString)
   }
 }
