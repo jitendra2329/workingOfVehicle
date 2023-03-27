@@ -1,7 +1,9 @@
 package com.test
+
 import org.scalatest.flatspec.AnyFlatSpec
 import com.knoldus.Vehicle
 import org.scalatest.matchers.must.Matchers.{an, be}
+
 class WorkingOfBikeTest extends AnyFlatSpec {
 
   val bike = new Vehicle
@@ -9,7 +11,7 @@ class WorkingOfBikeTest extends AnyFlatSpec {
   // moving bike for the first time ==> remaining fuel will be 30 liters
   it should "run bike first time and should return the remaining fuel 30 liters" in {
     val remainingFuel = bike.move
-    assert(remainingFuel == 30 )
+    assert(remainingFuel == 30)
   }
 
   // moving the bike for the second time ==> remaining fuel will be 10 liters
@@ -18,10 +20,9 @@ class WorkingOfBikeTest extends AnyFlatSpec {
     assert(remainingFuel == 10)
   }
 
-
   // As remaining is not sufficient to move the bike, we should get an exception here
   it should "throw an exception of IllegalAccessException because fuel is low" in {
-    an [IllegalAccessException] should be thrownBy {
+    an[IllegalAccessException] should be thrownBy {
       bike.move
     }
   }
@@ -46,7 +47,7 @@ class WorkingOfBikeTest extends AnyFlatSpec {
      the fuel capacity of the bike will be exceeded
    */
   it should "throw an exception because the total fuel capacity is 50 lites only" in {
-    an [IllegalArgumentException] should be thrownBy {
+    an[IllegalArgumentException] should be thrownBy {
       bike.fillFuel(40)
     }
   }

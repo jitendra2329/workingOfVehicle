@@ -42,7 +42,6 @@ class WorkingOfTruckTest extends AnyFlatSpec {
 
   //moving the truck third time
   it should "run truck third time and should return the remaining fuel 30 liters" in {
-
     //after refilling the fuel, total fuel will be 50 and the running again the fuel will be 30
     val remainingFuel = truck.move
     assert(remainingFuel == 30)
